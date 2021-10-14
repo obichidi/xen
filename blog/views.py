@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponse
+
+from .tests import Tester
 from .models import Post
 from django.views.generic import ListView, \
                                 DetailView, \
@@ -31,7 +33,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin,  CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'post_image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -42,7 +44,7 @@ class PostCreateView(LoginRequiredMixin,  CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'post_image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
