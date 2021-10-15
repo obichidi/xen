@@ -9,7 +9,13 @@
         <div class="article-metadata">
           <a class="mr-2" href="#">{{ object.author }}</a>
           <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-            {% if object.author == user %}
+
+        </div>
+        <h2 class="article-title">{{ post.title }}</h2>
+      <img src="{{post.post_image.url  }}" height-= 300 width= 400>
+        <p class="article-content">{{ post.content }}</p>
+
+  {% if object.author == user %}
                 <div>
 
                  <a class = "btn btn-secondary btn-sm mb-1" href="{% url 'post-update'  object.id %}">Update</a>
@@ -17,12 +23,6 @@
                 </div>
 
             {% endif %}
-        </div>
-        <h2 class="article-title">{{ post.title }}</h2>
-      <img src="{{post.post_image.url  }}" height-= 300 width= 400>
-        <p class="article-content">{{ post.content }}</p>
-
-
       </div>
     </article>
 
