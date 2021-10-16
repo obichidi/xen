@@ -40,3 +40,8 @@ def profile(request):
             'p_form': p_form
         }
     return render(request, 'users/profile.html', context)
+
+
+@login_required()
+def user_interface(request):
+    return render(request, 'users/user_interface.html')
