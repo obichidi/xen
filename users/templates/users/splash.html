@@ -20,11 +20,11 @@
         c.width = window.innerWidth;
 
         //chinese characters - taken from the unicode charset
-        var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+        var matrix = "obi";
         //converting the string into an array of single characters
         matrix = matrix.split("");
 
-        var font_size = 10;
+        var font_size = 18;
         var columns = c.width/font_size; //number of columns for the rain
         //an array of drops - one per column
         var drops = [];
@@ -61,7 +61,7 @@
             }
         }
 
-        setInterval(draw, 35);
+        setInterval(draw, 80);
 </script>
 </body>
 </html>
