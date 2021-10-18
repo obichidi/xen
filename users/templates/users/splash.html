@@ -5,13 +5,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/matrix.css' %}">
+
     <title>Welcome</title>
+
+    <style>     *{
+                margin: 0;
+                padding: 0;
+            }
+
+            body {background: black;}
+            canvas {display:block;}
+
+
+
+</style>
 </head>
 <body>
-<header class ="headertest"></header>
-<button>Enter</button>
-   <canvas id="c"></canvas>
+
+<a href="{% url 'blog-home' %}">
+   <canvas id="c"  ></canvas>
+</a>
+
 
 <script>
  var c = document.getElementById("c");

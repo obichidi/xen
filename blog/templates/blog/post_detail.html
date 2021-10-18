@@ -12,8 +12,8 @@
 
         </div>
         <h2 class="article-title">{{ post.title }}</h2>
-      <img src="{{post.image.url  }}" height= 200 width = 300>
-        <p class="article-content">{{ post.content }}</p>
+       <a href="{{post.image.url }}" target="_blank"><img src="{{post.image.url  }}" height= 200 width = 300 alt="{{ post.image.name }}">
+        <p class="article-content">{{ post.content }}</p></a>
 
   {% if object.author == user %}
                 <div>

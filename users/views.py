@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm, User, ProfileUpdateForm, UserUpdateForm
 from django.contrib.auth.decorators import login_required
+import json
 
 
 # Create your views here.
@@ -22,6 +23,11 @@ def register(request):
 
 @login_required()
 def profile(request):
+    all_users = User.objects.all().values('username')
+    user_list = list(all_users)
+    with open('user_list.json', 'w') as file_object:
+        json.dump(user_list, file_object)
+
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
