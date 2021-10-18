@@ -45,3 +45,7 @@ def profile(request):
 @login_required()
 def user_interface(request):
     return render(request, 'users/user_interface.html')
+
+
+def splash(request):
+    return render(request, 'users/splash.html')
